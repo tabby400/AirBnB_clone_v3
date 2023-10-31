@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-"""
-This module defines the main Flask application for your API.
+"""module defines the main Flask application for your API.
 
-It sets up the Flask app, registers blueprints, and handles error handling.
+sets up the Flask app, registers blueprints, and handles error handling.
 
-Usage:
-- Run this module to start the Flask server.
 """
 import os
 from flask import Flask
