@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""new view for the link between Place objects and Amenity 
-  objects that handles all default RESTFul API actions:"""
+"""new view for the link between Place objects and Amenity
+objects that handles all default RESTFul API actions:"""
 import os
 from api.v1.views import app_views
 from models import storage
