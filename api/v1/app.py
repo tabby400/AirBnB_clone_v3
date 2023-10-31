@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""module defines the main Flask application for your API.
+"""
+This module defines the main Flask application for your API.
 
-sets up the Flask app, registers blueprints, and handles error handling.
+It sets up the Flask app, registers blueprints, and handles error handling.
 
+Usage:
+- Run this module to start the Flask server.
 """
 import os
 from flask import Flask
@@ -20,21 +23,21 @@ app.register_blueprint(app_views, url_prefix="/api/v1")
 
 
 @app.errorhandler(404)
+"""return error message"""
+
 def page_not_found(e):
-    """The Error handler"""
     return {"error": "Not found"}, 404
 
 
 @app.errorhandler(400)
 def page_not_found(e):
-    """error message"""
     message = e.description
     return message, 400
 
 
 @app.teardown_appcontext
+"""Tear down storage count"""
 def close(ctx):
-    """Close storage"""
     storage.close()
 
 
