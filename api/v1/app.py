@@ -23,9 +23,12 @@ app.register_blueprint(app_views, url_prefix="/api/v1")
 
 
 @app.errorhandler(404)
-"""return error message"""
+def page_not_found(e):
+    return {"error": "Not found"}, 404
+
 
 def page_not_found(e):
+    """Page not found"""
     return {"error": "Not found"}, 404
 
 
@@ -36,7 +39,6 @@ def page_not_found(e):
 
 
 @app.teardown_appcontext
-"""Tear down storage count"""
 def close(ctx):
     storage.close()
 
