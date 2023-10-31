@@ -109,7 +109,7 @@ class TestFileStorage(unittest.TestCase):
 
 
 class TestFileStorage2(unittest.TestCase):
-    """testing number returned"""
+    """testing the number returned"""
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_count(self):
         """testing the count part"""
