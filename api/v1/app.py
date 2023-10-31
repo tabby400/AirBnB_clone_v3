@@ -1,5 +1,12 @@
 #!/usr/bin/python3
-"""Endpoint (route) will be to return the status of your API"""
+"""
+This module defines the main Flask application for your API.
+
+It sets up the Flask app, registers blueprints, and handles error handling.
+
+Usage:
+- Run this module to start the Flask server.
+"""
 import os
 from flask import Flask
 from models import storage
