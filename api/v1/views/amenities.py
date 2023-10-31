@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""State objects that handles all default RESTFul API actions"""
+"""objects handling all default RESTFul API actions"""
 
 from api.v1.views import app_views
 from models import storage
@@ -11,7 +11,7 @@ from flask import abort, request, jsonify
 @app_views.route("/amenities/<amenity_id>", strict_slashes=False,
                  methods=["GET"])
 def amenity(amenity_id=None):
-    """show amenity and amenity with id"""
+    """showing the amenity and amenity with id"""
     amenity_list = []
     if amenity_id is None:
         all_objs = storage.all(Amenity).values()
@@ -22,13 +22,13 @@ def amenity(amenity_id=None):
         result = storage.get(Amenity, amenity_id)
         if result is None:
             abort(404)
-        return jsonify(result.to_dict())
+        return jsonify(result.to_dict())  # json fmt
 
 
 @app_views.route("/amenities/<amenity_id>", strict_slashes=False,
                  methods=["DELETE"])
 def amenity_delete(amenity_id):
-    """delete method"""
+    """the deleting method"""
     obj = storage.get(Amenity, amenity_id)
     if obj is None:
         abort(404)
@@ -39,7 +39,7 @@ def amenity_delete(amenity_id):
 
 @app_views.route("/amenities", strict_slashes=False, methods=["POST"])
 def create_amenity():
-    """create a new post req"""
+    """creating new post request"""
     data = request.get_json(force=True, silent=True)
     if not data:
         abort(400, "Not a JSON")
@@ -53,7 +53,7 @@ def create_amenity():
 @app_views.route("/amenities/<amenity_id>", strict_slashes=False,
                  methods=["PUT"])
 def update_amenity(amenity_id):
-    """update amenity"""
+    """updating the amenity"""
     obj = storage.get(Amenity, amenity_id)
     if obj is None:
         abort(404)
