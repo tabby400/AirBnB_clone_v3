@@ -46,7 +46,7 @@ test_file_storage.py'])
                          "Found code style errors (and warnings).")
 
     def test_file_storage_module_docstring(self):
-        """Test for the file_storage.py module docstring"""
+        """Test the for the file_storage.py module docstring"""
         self.assertIsNot(file_storage.__doc__, None,
                          "file_storage.py needs a docstring")
         self.assertTrue(len(file_storage.__doc__) >= 1,
